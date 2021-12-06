@@ -1,38 +1,41 @@
-import React from 'react';
-import {BrowserRouter as Router,Switch,Route} from "react-router-dom";
+
+//Dependencies
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './App.css';
-import Login from './components/Login';
-import Registro from './components/Registro';
-import About from './components/About';
-import Online from './components/Online';
-import Offline from './components/Offline';
-import Contact from './components/Contact';
-import Home from './components/Home';
-import Historial from './components/Historial';
-import Navbarmenu from './components/menu/Navbarmenu';
+//Authentication Guards
+import RequireAuth from './components/UI/RequireAuth';
+//Pages
+import Splash from "./components/Splash";
+import Login from "./components/Login";
+import SignIn from "./components/SignIn";
+import Dashboard from "./components/Dashboard";
+import SwotList from "./components/SwotList";
+import SwotAdd from "./components/SwotAdd";
+import { useSelector } from "react-redux";
+import { initiatedApp } from './store/reducers/app/actions';
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+const Private = ({ children }) => <RequireAuth redirectTo="/login">{children}</RequireAuth>
 
 function App() {
+  const { appInitiated, loading} = useSelector(({app})=>app);
+  const dispatch = useDispatch();
+  useEffect(()=>{
+    initiatedApp(dispatch);
+  }, []);
   return (
-    <div>
-      <Router basename="/">
-        {/* Add Menu Component */}
-       
-        <Switch> 
-        <Route exact path="/" component={Login}/>
-          <Route path="/Registro" component={Registro}/>
-          <div>
-          <Navbarmenu />
-          <Route path="/About" component={About}/>
-          <Route path="/Home" component={Home}/>
-          <Route path="/Online" component={Online}/>
-          <Route path="/Offline" component={Offline}/>
-          <Route path="/Contact" component={Contact}/>
-          <Route exact path="/historial" component={Historial}/>
-          </div>
-        </Switch>
-      </Router>
-
-    </div>
+      <BrowserRouter>
+        <div className="App">
+          { (appInitiated)? (<Routes>
+            <Route path="/login"  element={<Login />} />
+            <Route path="/signin" element={<SignIn />} />
+            <Route path="/" element={<Private><Dashboard /></Private>}/>
+            <Route path="/new" element={<Private><SwotAdd /></Private>} />
+            <Route path="/list" element={<Private><SwotList /></Private>} />
+          </Routes>): (<Splash />)
+          }
+        </div>
+      </BrowserRouter>
   );
 }
 
