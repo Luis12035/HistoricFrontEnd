@@ -1,14 +1,14 @@
 import Base from "../Base";
 
-const TextBox = (
+const StdyPlace = (
   {
     label,
     onChange,
     placeholder,
     value,
     className,
-    email,
-    ...elseProps
+    name,
+   
   }
 )=>{
   return (
@@ -19,11 +19,11 @@ const TextBox = (
       value={value}
       label={label}
       className = {["textbox", className].join(" ")}
-      email={email}
-      {...elseProps}
+      name={name}
+      
     >
     </Base>
   );
 }
 
-export default TextBox;
+export default StdyPlace;

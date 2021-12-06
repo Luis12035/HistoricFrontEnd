@@ -1,8 +1,8 @@
-import { useSelector, useDispatch } from 'react-redux';
+/*import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import Page from '../Page';
 import { List, ListItem } from '../UI/List';
-import { fetchSwotData } from '../../store/reducers/swot/actions';
+import { fetchSwotData } from '../../store/reducers/historic/actions';
 const Loader = ()=>{
   return (<div>Cargando ....</div>);
 }
@@ -41,4 +41,4 @@ const SwotList = ()=>{
   );
 }
 
-export default SwotList;
+export default SwotList;*/

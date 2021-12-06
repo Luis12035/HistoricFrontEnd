@@ -7,7 +7,7 @@ const TextBox = (
     placeholder,
     value,
     className,
-    email,
+    name,
     ...elseProps
   }
 )=>{
@@ -19,7 +19,7 @@ const TextBox = (
       value={value}
       label={label}
       className = {["textbox", className].join(" ")}
-      email={email}
+      name={name}
       {...elseProps}
     >
     </Base>

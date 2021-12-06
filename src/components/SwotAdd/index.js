@@ -6,7 +6,7 @@ import { PrimaryButton } from '../UI/Button';
 import ComboBox from '../UI/ComboBox';
 
 import { useDispatch } from 'react-redux';
-import { addNewSwot } from '../../store/reducers/swot/actions';
+import { addNewHistoric } from '../../store/reducers/historic/actions';
 import { useNavigate } from 'react-router';
 
 const SwotAdd = () => {
@@ -34,7 +34,7 @@ const SwotAdd = () => {
     e.preventDefault();
     e.stopPropagation();
     const curatedSwotMeta = txtMeta.replaceAll(/,/g, '|');
-    addNewSwot(dispatch, txtDesc, curatedSwotMeta, txtType, navigate, "/list" )
+    addNewHistoric(dispatch, txtDesc, curatedSwotMeta, txtType, navigate, "/list" )
   }
   return (
     <Page showHeader showNavBar title={"Nuevo SWOT"}>

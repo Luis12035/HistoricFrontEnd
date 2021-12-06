@@ -7,7 +7,8 @@ const Password = (
     placeholder,
     value,
     className,
-    name
+    name,
+    ...elseProps
   }
 )=>{
   return (
@@ -19,6 +20,7 @@ const Password = (
       label={label}
       className = {["textbox", className].join(" ")}
       name={name}
+      {...elseProps}
     >
     </Base>
   );

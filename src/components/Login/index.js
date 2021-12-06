@@ -59,7 +59,7 @@ const Login = ()=>{
             payload: data,
           }
         );
-        navigate('/dashboard',{replace:true});
+        navigate('/all',{replace:true});
       }
     )
     .catch(
