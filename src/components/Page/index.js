@@ -1,9 +1,11 @@
 import {Fragment} from 'react';
+import {Link} from 'react-router-dom';
+import {MdDoorBack,mdRe} from 'react-icons/md'
 
 import NavBar from '../NavBar';
 import './index.css';
 
-const Page = ({children, className, showHeader, showNavBar, title})=>{
+const Page = ({children, className, showHeader, showNavBar, title, backtostate, backto})=>{
   //JSX
   let classNames = ["page", className];
   let header = null;
@@ -11,6 +13,17 @@ const Page = ({children, className, showHeader, showNavBar, title})=>{
   if (showHeader) {
     classNames.push("with_header");
     header = (<div className="header">{title}</div>);
+    if (backtostate) {
+      header = (
+      <div className="header">
+        <nav style={{width: '100%'}}>
+          <ul>
+            <li style={{marginLeft: '0px', width: '10%'}}><Link to={backto}><MdDoorBack></MdDoorBack></Link></li>
+            <li style={{marginLeft: '35%'}}>{title}</li>
+          </ul>
+        </nav> 
+        </div>);
+    }
   }
   if (showNavBar) {
     classNames.push("with_navbar");

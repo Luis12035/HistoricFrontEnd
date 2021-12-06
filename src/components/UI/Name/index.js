@@ -8,7 +8,7 @@ const Name = (
     value,
     className,
     name,
-   
+    ...elseProps
   }
 )=>{
   return (
@@ -20,7 +20,7 @@ const Name = (
       label={label}
       className = {["textbox", className].join(" ")}
       name={name}
-      
+      {...elseProps}
     >
     </Base>
   );

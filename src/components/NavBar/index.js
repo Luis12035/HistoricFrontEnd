@@ -13,9 +13,7 @@ const NavBar = ()=>{
       <li><Link to="/list">List</Link></li>
     </ul>) :
     (<ul>
-      <li><Link to="/"><MdHome /> Splash</Link></li>
-      <li><Link to="/login"><MdLogin /> Login</Link></li>
-      <li><Link to="/signin">Signin</Link></li>
+      
     </ul>);
 
   return (

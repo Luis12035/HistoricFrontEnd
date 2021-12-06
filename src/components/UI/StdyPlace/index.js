@@ -8,7 +8,7 @@ const StdyPlace = (
     value,
     className,
     name,
-   
+    ...elseProps
   }
 )=>{
   return (
@@ -20,7 +20,7 @@ const StdyPlace = (
       label={label}
       className = {["textbox", className].join(" ")}
       name={name}
-      
+      {...elseProps}
     >
     </Base>
   );

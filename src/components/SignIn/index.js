@@ -95,51 +95,51 @@ const SignIn = () => {
   }
 
   return (
-    <Page showHeader={true} title="Crear Cuenta" showNavBar>
+    <Page showHeader={true} title="Crear Cuenta" backtostate={true} backto='/login' showNavBar>
       <Content>
-        <TextBox
+        <TextBox style ={{borderRadius: 25}}
           label="Correo Electrónico"
           value={txtCorreo}
           placeholder="Correo Electrónico Valido"
           onChange={onChangeHandler}
           name="txtCorreo"
         />
-        <Password
+        <Password style ={{borderRadius: 25}}
           label="Contraseña"
           value={txtPassword}
           placeholder="Contraseña"
           onChange={onChangeHandler}
           name="txtPassword"
         />
-        <Name
+        <Name style ={{borderRadius: 25}}
           label="Nombre"
           value={txtName}
           placeholder="Nombre"
           onChange={onChangeHandler}
           name="txtName"
         />
-        <MiddleName
+        <MiddleName style ={{borderRadius: 25}}
           label="Segundo nombre"
           value={txtMiddlename}
           placeholder="Segundo nombre"
           onChange={onChangeHandler}
           name="txtMiddlename"
         />
-        <LastName
+        <LastName style ={{borderRadius: 25}}
           label="Apellido"
           value={txtLastname}
           placeholder="Apellido"
           onChange={onChangeHandler}
           name="txtLastname"
         />
-        <Age
+        <Age style ={{borderRadius: 25}}
           label="Edad"
           value={txtAge}
           placeholder="Edad"
           onChange={onChangeHandler}
           name="txtAge"
         />
-        <StdyPlace
+        <StdyPlace style ={{borderRadius: 25}}
           label="Lugar de estudio"
           value={txtStdyPlace}
           placeholder="Lugar de estudio"
@@ -148,7 +148,7 @@ const SignIn = () => {
         />
         
         <div style={{ width: "100%", padding: '0.5em', marginTop: '1em' }}>
-          <PrimaryButton onClick={onBtnClick}>Crear Cuenta</PrimaryButton>
+          <PrimaryButton onClick={onBtnClick} style={{borderRadius: 15, borderStyle: 'solid', borderWidth: '2px', borderColor: 'black'}}>Crear Cuenta</PrimaryButton>
         </div>
       </Content>
     </Page>

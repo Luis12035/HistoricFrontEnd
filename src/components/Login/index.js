@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { useNavigate } from 'react-router-dom';
+import { useNavigate,Link } from 'react-router-dom';
 import { publicAxios } from '../../store/utils/Axios';
 
 import Page from '../Page';
@@ -91,13 +91,11 @@ const Login = ()=>{
   const { hasErrors } = security;
 
   return (
-    <Page showHeader={true} title="Login" showNavBar>
+    <Page showHeader={true} title="Login" backto="" backtostate={false} showNavBar>
       <Content>
-        <div style={{width: "90%", 
-          textAlign: 'center', borderColor: 'black', 
-          borderWidth: "2px", height: "60%", borderStyle: "solid"}}>
+        <div style={{textAlign: 'center', borderColor: 'black', borderWidth: "2px", height: "60%", borderStyle: "solid", margin:'0.7em', marginTop: '6em', borderRadius: 25}}>
 
-          <TextBox
+          <TextBox style ={{borderRadius: 25}}
           value={txtCorreo}
           placeholder="Correo Electrónico"
           onChange={onChangeHandler}
@@ -106,29 +104,30 @@ const Login = ()=>{
             alert("salio de foco");
           }}
          />
-        <Password
+        <Password style ={{borderRadius: 25}}
           value={txtPassword}
           placeholder="Contraseña"
           onChange={onChangeHandler}
           name="txtPassword"
         />
         <div style={{width:"100%", padding:'0.5em', marginTop:'1em'}}>
-          <PrimaryButton onClick={onBtnClick}>Iniciar Sesión </PrimaryButton>
+          <PrimaryButton style={{borderRadius: 15, borderStyle: 'solid', borderWidth: '2px', borderColor: 'black'}} onClick={onBtnClick}>Iniciar Sesión </PrimaryButton>
+        </div>
+        <div style={{width: "100%", padding: '0.5em', marginTop: '1em'}}>
+          <a><Link to="/signin">Registrarse</Link></a>
         </div>
         {
           (hasErrors && (
-            <div style={{ width: "100%", padding: '0.5em', marginTop: '1em', color:'#F00' }}>
+            <div style={{width: "100%", padding: '0.5em', marginTop: '1em', color:'#F00'}}>
               No se pudo validar su Correo o Contraseña. Intente nuevamente.
             </div>
           ))
         }
-
         </div>
-        
-
       </Content>
     </Page>
   );
 }
+
 
 export default Login;
