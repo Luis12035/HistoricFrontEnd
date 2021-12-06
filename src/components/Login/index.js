@@ -43,6 +43,7 @@ const Login = ()=>{
         payload: null,
       }
     );
+
     publicAxios.post(
       '/api/sec/login',
       {
@@ -50,6 +51,7 @@ const Login = ()=>{
         pswd: txtPassword,
       }
     )
+
     .then(
       ({data}) => {
         console.log(data)
@@ -62,6 +64,7 @@ const Login = ()=>{
         navigate('/all',{replace:true});
       }
     )
+
     .catch(
       (err)=>{
         console.log(err);
@@ -88,12 +91,15 @@ const Login = ()=>{
   const { hasErrors } = security;
 
   return (
-    <Page showHeader={true} title="Iniciar Sesión" showNavBar>
+    <Page showHeader={true} title="Login" showNavBar>
       <Content>
-        <TextBox
-          label="Correo Electrónico"
+        <div style={{width: "90%", 
+          textAlign: 'center', borderColor: 'black', 
+          borderWidth: "2px", height: "60%", borderStyle: "solid"}}>
+
+          <TextBox
           value={txtCorreo}
-          placeholder="Correo Electrónico Valido"
+          placeholder="Correo Electrónico"
           onChange={onChangeHandler}
           name="txtCorreo"
           onBlur={(e)=>{
@@ -101,7 +107,6 @@ const Login = ()=>{
           }}
          />
         <Password
-          label="Contraseña"
           value={txtPassword}
           placeholder="Contraseña"
           onChange={onChangeHandler}
@@ -117,6 +122,9 @@ const Login = ()=>{
             </div>
           ))
         }
+
+        </div>
+        
 
       </Content>
     </Page>
