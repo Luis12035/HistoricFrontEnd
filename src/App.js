@@ -29,7 +29,7 @@ function App() {
           { (appInitiated)? (<Routes>
             <Route path="/login"  element={<Login />} />
             <Route path="/signin" element={<SignIn />} />
-            <Route path="/" element={<Private><Dashboard /></Private>}/>
+            <Route path="/dashboard" element={<Private><Dashboard /></Private>}/>
             <Route path="/new" element={<Private><HistoricAdd /></Private>} />            
             <Route path="/list" element={<Private><HistoricList /></Private>} />
           </Routes>): (<Splash />)
