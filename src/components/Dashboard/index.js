@@ -4,12 +4,19 @@ import Content from '../UI/Content';
 const getSecurity = ({security})=>security;
 const Dashboard = ()=>{
   const {user } = useSelector(getSecurity);
+
   return (
-    <Page title="SWOT 1.0" showHeader showNavBar>
+    <Page title="Home" showHeader showNavBar backtostate={true} backto='/login'>
       <Content>
-        { user.email}
-        <br/>
-        { user._id }
+        <div className="MainContainer" style={{padding: '0.7em' ,textAlign: 'center', height: '100%'}}>
+          <div className="ChlidContainer" style={{borderRadius: '15px' ,borderColor: '#9E9E9E', borderStyle: 'solid', borderWidth: '2px', alignItems: 'center', justifyContent: 'center', display: 'block', marginTop: '50%', boxShadow: '2px 2px 8px #9E9E9E'}}>
+            <h1>Bienvenido: {user.name + ' ' + user.middlename + ' ' + user.lastname} </h1>
+            <div className="AvgContainer" style={{borderColor: 'black' ,borderWidth: '2px', borderStyle:'solid', margin: '0.5em', borderRadius: '15px'}}>
+              <h1>Tu promedio es: </h1>
+            </div>
+          </div>
+          
+        </div>
       </Content>
     </Page>
   );

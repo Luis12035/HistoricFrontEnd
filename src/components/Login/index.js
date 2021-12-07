@@ -93,9 +93,9 @@ const Login = ()=>{
   return (
     <Page showHeader={true} title="Login" backto="" backtostate={false} showNavBar>
       <Content>
-        <div style={{textAlign: 'center', borderColor: 'black', borderWidth: "2px", height: "60%", borderStyle: "solid", margin:'0.7em', marginTop: '6em', borderRadius: 25}}>
+        <div style={{textAlign: 'center', borderColor: 'black', borderWidth: "2px", height: "60%", margin:'0.7em', marginTop: '6em', borderRadius: 25}}>
 
-          <TextBox style ={{borderRadius: 25}}
+          <TextBox 
           value={txtCorreo}
           placeholder="Correo Electrónico"
           onChange={onChangeHandler}
@@ -104,14 +104,14 @@ const Login = ()=>{
             alert("salio de foco");
           }}
          />
-        <Password style ={{borderRadius: 25}}
+        <Password 
           value={txtPassword}
           placeholder="Contraseña"
           onChange={onChangeHandler}
           name="txtPassword"
         />
         <div style={{width:"100%", padding:'0.5em', marginTop:'1em'}}>
-          <PrimaryButton style={{borderRadius: 15, borderStyle: 'solid', borderWidth: '2px', borderColor: 'black'}} onClick={onBtnClick}>Iniciar Sesión </PrimaryButton>
+          <PrimaryButton  onClick={onBtnClick}>Iniciar Sesión </PrimaryButton>
         </div>
         <div style={{width: "100%", padding: '0.5em', marginTop: '1em'}}>
           <a><Link to="/signin">Registrarse</Link></a>

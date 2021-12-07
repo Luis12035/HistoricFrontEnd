@@ -13,7 +13,7 @@ export const Button = ({onClick, children, ...rest})=>{
 
 export const PrimaryButton = ({children, ...rest }) =>{
   return (
-    <Button
+    <Button style={{borderRadius: 15, boxShadow: '2px 2px 8px #9E9E9E'}}
       {...rest}
       className="btn primary"
     >
@@ -24,7 +24,7 @@ export const PrimaryButton = ({children, ...rest }) =>{
 
 export const SecondaryButton = ({ children, ...rest }) => {
   return (
-    <Button
+    <Button style={{borderRadius: 15, borderStyle: 'solid', borderWidth: '2px', borderColor: 'black', boxShadow: '2px 2px 8px #9E9E9E'}}
       {...rest}
       className="btn secondary"
     >

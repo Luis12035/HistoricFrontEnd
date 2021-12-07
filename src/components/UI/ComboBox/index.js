@@ -16,9 +16,9 @@ const ComboBox = (
   const _onChange = onChange || function(e){return null;};
 
   return (
-    <div className={curatedClassName}>
+    <div className={curatedClassName} >
       <label>{label}
-        <select
+        <select style ={{borderRadius: 25, boxShadow: '2px 2px 8px #9E9E9E'}}
           name={name}
           id={id}
           onChange={_onChange}

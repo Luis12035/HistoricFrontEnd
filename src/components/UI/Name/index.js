@@ -12,7 +12,7 @@ const Name = (
   }
 )=>{
   return (
-    <Base
+    <Base style ={{borderRadius: 25, boxShadow: '2px 2px 8px #9E9E9E'}}
       type="text"
       onChange={onChange}
       placeholder={placeholder}
