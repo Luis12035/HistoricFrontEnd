@@ -4,17 +4,22 @@ import { MdHome, MdLogin, MdList } from "react-icons/md"
 import { useSelector } from "react-redux";
 
 import './index.css';
-const NavBar = ()=>{
+const NavBar = ({loginstate})=>{
   const {isLogged} = useSelector(({security})=>security);
-  const menu = isLogged ?
+  let menu;
+  if (loginstate) {
+    console.log("Logeado");
+  } else {
+    menu = isLogged ?
     (<ul>
-      <li><Link to="/dashboard"><MdHome /> Home</Link></li>
       <li><Link to="/new"><MdLogin />Add Histori</Link></li>
       <li><Link to="/list"><MdList />Historic</Link></li>
     </ul>) :
     (<ul>
       
     </ul>);
+  }
+  
 
   return (
     <nav>

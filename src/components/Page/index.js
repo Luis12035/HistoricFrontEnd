@@ -5,15 +5,16 @@ import {MdDoorBack,mdRe} from 'react-icons/md'
 import NavBar from '../NavBar';
 import './index.css';
 
-const Page = ({children, className, showHeader, showNavBar, title, backtostate, backto})=>{
+const Page = ({children, className, showHeader, showNavBar, title, backtostate, backto, loginstate})=>{
   //JSX
   let classNames = ["page", className];
   let header = null;
   let navBar = null;
+  
   if (showHeader) {
     classNames.push("with_header");
     header = (<div className="header">{title}</div>);
-    if (backtostate) {
+    if (backtostate ) {
       header = (
       <div className="header">
         <nav style={{width: '100%'}}>
@@ -27,8 +28,9 @@ const Page = ({children, className, showHeader, showNavBar, title, backtostate, 
   }
   if (showNavBar) {
     classNames.push("with_navbar");
+    const longin = loginstate
     //navBar = (<div style={{ backgroundColor: "#000", color: "#FFF", minHeight: "64px" }}></div>);
-    navBar = (<NavBar/>);
+    navBar = (<NavBar loginstate={longin}/>);
   }
 
   return (

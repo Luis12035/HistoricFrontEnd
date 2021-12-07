@@ -14,6 +14,7 @@ import Content from '../UI/Content';
 import { PrimaryButton } from '../UI/Button';
 
 import { useSelector, useDispatch } from 'react-redux';
+import { Navigate } from 'react-router';
 
 const getSecurity = ({ security }) => security;
 const SignIn = () => {
@@ -58,6 +59,7 @@ const SignIn = () => {
               type: "SEC_SIGNIN_SUCCESS"
             }
           );
+          Navigate('/login',{replace:true})
         }
       )
       .catch(

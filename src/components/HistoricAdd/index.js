@@ -51,7 +51,7 @@ const SwotAdd = () => {
     
   }
   return (
-    <Page showHeader showNavBar title={"Add Historic"} backto='/login' backtostate={true}>
+    <Page showHeader showNavBar title={"Add Historic"} backto='/list' backtostate={false}>
       <Content>
        
         <TextBox

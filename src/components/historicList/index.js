@@ -8,7 +8,7 @@ import { fetchHistoricData } from '../../store/reducers/historic/actions';
 const Loader = ()=>{
   return (<div>Cargando ....</div>);
 }
-
+let sum, avg, counter;
 const getSecurity = ({ security }) => security;
 
 const HistoricList = ()=>{
@@ -35,7 +35,7 @@ const HistoricList = ()=>{
    
     return(
       
-        <Page title="Historico" showHeader showNavBar>
+        <Page title="Historico" showHeader showNavBar loginstate={false} backtostate={true} backto='/login'>
       <Content>
         <div className="MainConteiner" style={{borderWidth: '1px', marginTop: '0.3em', padding: '0.4em', borderRadius: '14px', boxShadow: '2px 2px 8px #9E9E9E'}}>
         <div className="MainListCointainer" style={{display: 'flex', marginTop: '0.3em'}}>
@@ -76,7 +76,7 @@ const HistoricList = ()=>{
                                 <div style={{borderStyle: 'solid', borderColor: 'black', borderWidth: '1px 0.5px 0.5px 1px', width: '100%'}}>
                                   {h.Nota} 
                                 </div>
-                              </div>                                                               
+                              </div> 
                              </ListItem>)
                         })}                            
                         </ListItem>) 

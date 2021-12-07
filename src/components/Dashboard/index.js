@@ -6,7 +6,7 @@ const Dashboard = ()=>{
   const {user } = useSelector(getSecurity);
 
   return (
-    <Page title="Home" showHeader showNavBar backtostate={true} backto='/login'>
+    <Page title="Home" showHeader showNavBar backtostate={true} backto='/login' loginstate ={false}>
       <Content>
         <div className="MainContainer" style={{padding: '0.7em' ,textAlign: 'center', height: '100%'}}>
           <div className="ChlidContainer" style={{borderRadius: '15px' ,borderColor: '#9E9E9E', borderStyle: 'solid', borderWidth: '2px', alignItems: 'center', justifyContent: 'center', marginTop: '10em', display: 'block', boxShadow: '2px 2px 8px #9E9E9E'}}>

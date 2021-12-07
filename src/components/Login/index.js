@@ -91,7 +91,7 @@ const Login = ()=>{
   const { hasErrors } = security;
 
   return (
-    <Page showHeader={true} title="Login" backto="" backtostate={false} showNavBar>
+    <Page showHeader={true} title="Login" backto="" backtostate={false} showNavBar loginstate={true}>
       <Content>
         <div style={{textAlign: 'center', borderColor: 'black', borderWidth: "2px", height: "60%", margin:'0.7em', marginTop: '6em', borderRadius: 25}}>
 
