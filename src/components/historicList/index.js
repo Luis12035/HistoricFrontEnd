@@ -1,6 +1,6 @@
 import { useSelector, useDispatch } from 'react-redux';
 import Content from '../UI/Content';
-import Card from "react";
+
 import { useEffect } from 'react';
 import Page from '../Page';
 import { List, ListItem } from '../UI/List';
@@ -32,10 +32,7 @@ const HistoricList = ()=>{
         
       }, []);
 
-    const historicList = historic.items.map((o,i)=>{
-        return (<ListItem key={i._id}>{o.name} </ListItem>);
-    })
-    console.log("list",historic.items)
+   
     return(
         <Page title="Historico" showHeader showNavBar>
       <Content>
