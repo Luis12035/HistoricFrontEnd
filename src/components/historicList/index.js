@@ -34,6 +34,7 @@ const HistoricList = ()=>{
 
    
     return(
+      
         <Page title="Historico" showHeader showNavBar>
       <Content>
         <div className="MainConteiner" style={{borderWidth: '1px', marginTop: '0.3em', padding: '0.4em', borderRadius: '14px', boxShadow: '2px 2px 8px #9E9E9E'}}>

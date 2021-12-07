@@ -46,22 +46,9 @@ const SwotAdd = () => {
   const onBtnClick = (e)=> {
     e.preventDefault();
     e.stopPropagation();
-    let datos = {
-      txtClassCod, 
-      txtClassName, 
-      txtYear, 
-      txtPeriod, 
-      txtCalification}
-    const historyMetaobjet = [];
-    historyMetaobjet.push(datos)
-    console.log("agregado",historyMetaobjet)
-    //const curatedSwotMeta = txtClassCod;
-    addNewHistoric(dispatch,  txtClassCod, 
-      txtClassName, 
-      txtYear, 
-      txtPeriod, 
-      txtCalification, navigate, "/list")
-    //addNewHistoric(dispatch, txtDesc, curatedSwotMeta, txtType, navigate, "/list" )
+    
+    addNewHistoric(dispatch, txtClassCod, txtClassName, txtYear, txtPeriod, txtCalification, navigate, "/list")
+    
   }
   return (
     <Page showHeader showNavBar title={"Add Historic"} backto='/login' backtostate={true}>

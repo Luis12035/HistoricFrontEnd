@@ -1,6 +1,5 @@
 import { privateAxios } from "../../utils/Axios";
 
-
 export const addNewHistoric = (dispatch,Codigo, Clase, Año, Periodo,Nota, navigate, to)=>{
   dispatch(
     {type:"HISTORIC_ADD_START", payload:null}
