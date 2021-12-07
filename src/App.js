@@ -9,7 +9,7 @@ import Splash from "./components/Splash";
 import Login from "./components/Login";
 import SignIn from "./components/SignIn";
 import Dashboard from "./components/Dashboard";
-import SwotList from "./components/SwotList";
+import HistoricList from "./components/historicList";
 import SwotAdd from "./components/SwotAdd";
 import { useSelector } from "react-redux";
 import { initiatedApp } from './store/reducers/app/actions';
@@ -31,7 +31,7 @@ function App() {
             <Route path="/signin" element={<SignIn />} />
             <Route path="/" element={<Private><Dashboard /></Private>}/>
             <Route path="/new" element={<Private><SwotAdd /></Private>} />
-            <Route path="/list" element={<Private><SwotList /></Private>} />
+            <Route path="/list" element={<Private><HistoricList /></Private>} />
           </Routes>): (<Splash />)
           }
         </div>

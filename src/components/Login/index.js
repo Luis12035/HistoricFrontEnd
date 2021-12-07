@@ -61,7 +61,7 @@ const Login = ()=>{
             payload: data,
           }
         );
-        navigate('/historic/all',{replace:true});
+        navigate('/list',{replace:true});
       }
     )
 

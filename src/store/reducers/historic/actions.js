@@ -24,6 +24,34 @@ export const addNewHistoric = (dispatch, nombre, historyMetaobjet, navigate, to)
       )
     });
 }
+export const fetchHistoricData = (dispatch)=>{
+  dispatch(
+    {
+      type:"HISTORIC_START_FETCH",
+      payload:null
+    }
+  )
+  privateAxios.get('/api/historic/all')
+  .then(({data})=>{
+    console.log(data);
+    dispatch(
+      {
+        type:"HISTORIC_FETCH_SUCCESS",
+        payload: data
+      }
+    )
+  })
+  .catch((err)=>{
+    console.log(err);
+    dispatch(
+      {
+        type:"HISTORIC_FETCH_ERROR",
+        payload: ["Error al traer Info"]
+      }
+    )
+  });
+}
+
 /*
 export const fetchHistoricData = (dispatch, page, pageItem, text)=>{
   dispatch(

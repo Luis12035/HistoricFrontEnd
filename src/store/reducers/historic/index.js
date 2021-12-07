@@ -1,13 +1,6 @@
 const initialState = {
-  hasMore:true,
-  items:[],
-  fetching:false,
-  hasErrors:false,
-  errors:[],
-  currentPage:0,
-  pageSize:15,
-  totalPages:0,
-  totalDocs:0
+  name: "",
+  items: []
 }
 
 const historicReducer = (state=initialState, action)=>{
@@ -15,24 +8,13 @@ const historicReducer = (state=initialState, action)=>{
   switch( type ){
     case "HISTORIC_START_FETCH":
       return {
-        ...state,
-        fetching:true,
-        hasErrors:false,
-        errors:[]
+        ...state
       }
     case "HISTORIC_FETCH_SUCCESS":
-      const totalPages = (Math.ceil(payload.docsMatched / payload.itemsPerPage));
-      const hasMore = payload.page !== totalPages;
+      
       return {
         ...state,
-        fetching:false,
-        hasErrors:false,
-        errors:[],
-        totalPages: totalPages,
-        currentPage: payload.page,
-        items: [...state.items, ...payload.documents],
-        hasMore: hasMore,
-        totalDocs: payload.docsMatched
+        items: [...payload]
       }
     case "HISTORIC_LIST_CLEAR":
       return{...initialState};
