@@ -11,6 +11,7 @@ import SignIn from "./components/SignIn";
 import Dashboard from "./components/Dashboard";
 import HistoricList from "./components/historicList";
 import HistoricAdd from "./components/HistoricAdd";
+
 import { useSelector } from "react-redux";
 import { initiatedApp } from './store/reducers/app/actions';
 import { useEffect } from "react";
@@ -32,6 +33,7 @@ function App() {
             <Route path="/dashboard" element={<Private><Dashboard /></Private>}/>
             <Route path="/new" element={<Private><HistoricAdd /></Private>} />            
             <Route path="/list" element={<Private><HistoricList /></Private>} />
+           
           </Routes>): (<Splash />)
           }
         </div>

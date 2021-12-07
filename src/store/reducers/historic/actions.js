@@ -50,32 +50,3 @@ export const fetchHistoricData = (dispatch)=>{
     )
   });
 }
-
-/*
-export const fetchHistoricData = (dispatch, page, pageItem, text)=>{
-  dispatch(
-    {
-      type:"HISTORIC_START_FETCH",
-      payload:null
-    }
-  )
-  privateAxios.get(`/api/swot/facet/${page}/${pageItem}`)
-  .then(({data})=>{
-    console.log(data);
-    dispatch(
-      {
-        type:"HISTORIC_FETCH_SUCCESS",
-        payload: data
-      }
-    )
-  })
-  .catch((err)=>{
-    console.log(err);
-    dispatch(
-      {
-        type:"HISTORIC_FETCH_ERROR",
-        payload: ["Error al traer Info"]
-      }
-    )
-  });
-}*/
