@@ -1,11 +1,11 @@
 import { privateAxios } from "../../utils/Axios";
 
 
-export const addNewHistoric = (dispatch, nombre, historyMetaobjet, navigate, to)=>{
+export const addNewHistoric = (dispatch,Codigo, Clase, Año, Periodo,Nota, navigate, to)=>{
   dispatch(
     {type:"HISTORIC_ADD_START", payload:null}
   );
-  privateAxios.post('/api/historic/new', {nombre, historyMetaobjet})
+  privateAxios.post('/api/historic/new', { Codigo, Clase, Año, Periodo,Nota})
     .then(({data})=>{
       console.log(data);
       dispatch(

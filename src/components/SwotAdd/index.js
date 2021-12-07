@@ -5,12 +5,15 @@ import TextBox from '../UI/TextBox';
 import { PrimaryButton } from '../UI/Button';
 import ComboBox from '../UI/ComboBox';
 
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { addNewHistoric } from '../../store/reducers/historic/actions';
 import { useNavigate } from 'react-router';
+const getSecurity = ({ security }) => security;
 
 const SwotAdd = () => {
-  const [txtName, setTxtName] = useState();
+  const { user } = useSelector(getSecurity);
+  console.log(user)
+
   const [txtClassCod, setTxtClassCode] = useState();
   const [txtClassName, setTxtClassName] = useState();
   const [txtYear, setTxtYear] = useState();
@@ -20,56 +23,50 @@ const SwotAdd = () => {
   //const [txtDesc, setTxtName] = useState();
   //const [txtMeta, setTxtMeta] = useState();
   //const [txtType, setTxtPeriod] = useState('S');
-
+  
   const dispatch = useDispatch();
   const navigate = useNavigate();
+
   const onChangeHandler = (e)=> {
-    const {name, value} = e.target;
-    switch(name){
-      case "txtName":
-        setTxtName(value);
-        break;
-      case "txtClassCod":
-        setTxtClassCode(value);
-        break;
-      case "txtPeriod":
-        setTxtPeriod(value);
-        break;
-      case "txtClassName":
-        setTxtClassName(value);
-        break;
-      case "txtYear":
-        setTxtYear(value);
-        break;
-      case "txtCalification":
-        setTxtCalification(value);
-        break;
+    e.preventDefault();
+    e.stopPropagation();
+    if (e.target.name === "txtClassCod") {
+      setTxtClassCode(e.target.value);
+    } else if (e.target.name === "txtPeriod") {
+      setTxtPeriod(e.target.value);
+    } else if (e.target.name === "txtClassName") {
+      setTxtClassName(e.target.value);
+    } else if (e.target.name === "txtYear") {
+      setTxtYear(e.target.value);
+    } else {
+      setTxtCalification(e.target.value);
     }
+
   }
   const onBtnClick = (e)=> {
     e.preventDefault();
     e.stopPropagation();
-    const newClassToHistori = {
+    let datos = {
       txtClassCod, 
       txtClassName, 
       txtYear, 
       txtPeriod, 
       txtCalification}
+    const historyMetaobjet = [];
+    historyMetaobjet.push(datos)
+    console.log("agregado",historyMetaobjet)
     //const curatedSwotMeta = txtClassCod;
-    addNewHistoric(dispatch, txtName, newClassToHistori, navigate, "/list")
+    addNewHistoric(dispatch,  txtClassCod, 
+      txtClassName, 
+      txtYear, 
+      txtPeriod, 
+      txtCalification, navigate, "/list")
     //addNewHistoric(dispatch, txtDesc, curatedSwotMeta, txtType, navigate, "/list" )
   }
   return (
     <Page showHeader showNavBar title={"Add Historic"} backto='/login' backtostate={true}>
       <Content>
-        <TextBox
-          label="Nombre del alumno"
-          placeholder="Nombre del alumno"
-          value={txtName}
-          name="txtName"
-          onChange={onChangeHandler} >
-        </TextBox>
-
+       
         <TextBox
           label="Codigo de clase"
           placeholder="Codigo de clase"
