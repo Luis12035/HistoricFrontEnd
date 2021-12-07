@@ -66,13 +66,3 @@ const HistoricList = ()=>{
 }
 
 export default HistoricList;
-/* { historico.nombre}
-        <br/>*/
-        /*{historic.items.map((i)=>{
-           return (<List
-                key={i._id}                          
-                name={i.name}
-                loader={(<Loader />)}
-                dataLength={5}
-           />)
-       })}*/
