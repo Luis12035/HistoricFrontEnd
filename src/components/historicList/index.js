@@ -37,6 +37,12 @@ const HistoricList = ()=>{
       
         <Page title="Historico" showHeader showNavBar loginstate={false} backtostate={true} backto='/login'>
       <Content>
+      <div className="MainContainer" style={{textAlign: 'center', marginTop: '3em', marginBottom: '1em'}}>
+          <div className="ChlidContainer" style={{borderRadius: '15px' ,borderColor: '#9E9E9E', borderStyle: 'solid', borderWidth: '2px', alignItems: 'center', justifyContent: 'center', display: 'block', boxShadow: '2px 2px 8px #9E9E9E'}}>
+            <h1>Bienvenido: {user.name + ' ' + user.middlename + ' ' + user.lastname} </h1>
+          </div>
+        </div>
+
         <div className="MainConteiner" style={{borderWidth: '1px', marginTop: '0.3em', padding: '0.4em', borderRadius: '14px', boxShadow: '2px 2px 8px #9E9E9E'}}>
         <div className="MainListCointainer" style={{display: 'flex', marginTop: '0.3em'}}>
           <div style={{borderStyle: 'solid', borderColor: 'black', borderWidth: '1px 1px 0.5px 0.5px', width: '100%'}}>

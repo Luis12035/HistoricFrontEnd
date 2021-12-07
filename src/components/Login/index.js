@@ -114,7 +114,7 @@ const Login = ()=>{
           <PrimaryButton  onClick={onBtnClick}>Iniciar Sesión </PrimaryButton>
         </div>
         <div style={{width: "100%", padding: '0.5em', marginTop: '1em'}}>
-          <a><Link to="/signin">Registrarse</Link></a>
+          <a><Link to="/signin" style={{color: 'black'}}>Registrarse</Link></a>
         </div>
         {
           (hasErrors && (
