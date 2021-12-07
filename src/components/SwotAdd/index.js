@@ -49,8 +49,14 @@ const SwotAdd = () => {
   const onBtnClick = (e)=> {
     e.preventDefault();
     e.stopPropagation();
+    const newClassToHistori = {
+      txtClassCod, 
+      txtClassName, 
+      txtYear, 
+      txtPeriod, 
+      txtCalification}
     //const curatedSwotMeta = txtClassCod;
-    addNewHistoric(dispatch)
+    addNewHistoric(dispatch, txtName, newClassToHistori, navigate, "/list")
     //addNewHistoric(dispatch, txtDesc, curatedSwotMeta, txtType, navigate, "/list" )
   }
   return (
