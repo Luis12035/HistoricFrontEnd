@@ -1,4 +1,8 @@
-# Getting Started with Create React App
+# Proyecto Grupo #4
+### Historic App
+## Integrantes
+- Wilmer Josue Garcia 1006-1998-01227
+- Luis Geovanni Trochez 1627-1999-00179
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
